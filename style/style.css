@@ -1,0 +1,15 @@
+/* style.css */
+
+body{
+    background-color: red;
+}
+
+.recipe {
+    background-color: #e00d0d;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.recipe h2 {
+    color: #cb1010;
+}
