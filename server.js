@@ -1,27 +1,33 @@
 const express = require ("express");
 const bodyParser = require ("body-parser");
 const path = require("path");
-
+const recipesRoute = require('./routes/getRecipe.js')
 const app = express();
 const port = 8001;
 
 
-const recipesRoute = require('./routes/getRecipe')
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/style'))); // adding styles
 
 app.use('/api/recipes', recipesRoute)
 
 app.get("/", (req, res) => {
-    try {
-      res.sendFile(path.join(__dirname, "index.html"));
-  } catch (err) {
-      console.error("Error sending file:", err);
-      res.status(500).send("Internal Server Error");
-  }
+  try {
+    if (req.query.number) {
+      const number = parseInt(req.params.number);
+      const selectedRecipes = recipes.slice(0, number);
+      res.json(selectedRecipes);
+      } else {
+        res.sendFile(path.join(__dirname, "index.html"));
+    }
+} catch (err) {
+    console.error("Error sending file:", err);
+    res.status(500).send("Internal Server Error");
+}
 });
+
 
 // 404 Middleware
 app.use((err, req, res, next) => {
@@ -31,5 +37,5 @@ app.use((err, req, res, next) => {
 
 //listing at port...
 app.listen(port, ()=>{
-    console.log(`Server is listening on port: {${port}}`);
+    console.log(`Server is listening on port: ${port}`);
 })

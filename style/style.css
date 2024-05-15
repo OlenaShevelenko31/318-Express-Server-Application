@@ -1,15 +1,27 @@
 /* style.css */
 
 body{
-    background-color: red;
+    background-image: url("https://img.freepik.com/free-vector/recipe-book-concept-illustration_114360-7481.jpg?t=st=1715628543~exp=1715632143~hmac=58ba80522fa4d9194cecbc61ec4d87e72cf9307e89c22c58df8049e885f02118&w=1060");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.recipe {
-    background-color: #e00d0d;
-    padding: 20px;
-    border-radius: 5px;
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+input{
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+    size: 15px;
+    font-style: italic;
+    border-radius: 20px;
 }
 
-.recipe h2 {
-    color: #cb1010;
-}
+

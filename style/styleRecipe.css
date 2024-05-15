@@ -1,3 +1,16 @@
 body{
-    background-color: yellow;
+    background-image: url("https://img.freepik.com/free-photo/ingredients-noodles-with-vegetables-notebook_23-2148551727.jpg?t=st=1715627786~exp=1715631386~hmac=004e42f7ff53bb60021ebdc2b5501577b31a39f4e9fcad6f7cddccbe3d34174c&w=1060");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.recipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 18px;
+
 }
